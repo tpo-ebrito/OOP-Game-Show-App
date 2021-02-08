@@ -28,7 +28,7 @@ class Game {
 
   handleInteraction (button) {
     button.disabled = true
-    if (!this.phrase.includes(button.textContent)) {
+    if (!this.activePhrase.phrase.includes(button.textContent)) {
       button.className = 'wrong'
       this.removeLife()
     } else {

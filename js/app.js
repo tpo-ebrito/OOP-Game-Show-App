@@ -33,8 +33,27 @@
 // console.log(`Active Phrase - phrase: ${game.activePhrase.phrase}`)
 
 let game
+const buttons = document.querySelectorAll('.key')
 
 document.querySelector('#btn__reset').addEventListener('click', (e) => {
+  const ul = document.querySelector('ul')
+  while (ul.firstElementChild) {
+    ul.removeChild(ul.firstElementChild)
+  }
+
+  buttons.forEach(button => {
+    button.disabled = false
+    button.className = 'key'
+  })
+
+  const lives = document.querySelectorAll('.tries')
+  lives.forEach(life => { life.firstElementChild.src = 'images/liveHeart.png' })
+
   game = new Game()
   game.startGame()
 })
+
+buttons.forEach(button => button.addEventListener('click', (e) => {
+  game.handleInteraction(e.target)
+  // console.log(button.textContent)
+}))
