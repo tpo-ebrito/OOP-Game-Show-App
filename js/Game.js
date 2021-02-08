@@ -34,8 +34,9 @@ class Game {
     } else {
       button.className = 'chosen'
       this.activePhrase.showMatchedLetter(button.textContent)
-      if (this.checkForWin === true) {
-        this.gameOver('win')
+
+      if (this.checkForWin() === true) {
+        this.gameOver()
       }
     }
   }
