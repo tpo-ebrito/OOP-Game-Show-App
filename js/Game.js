@@ -60,7 +60,7 @@ class Game {
       document.querySelector('#game-over-message').textContent = 'Congrats! You Won! :D'
       document.querySelector('#overlay').className = 'win'
     } else {
-      document.querySelector('#game-over-message').textContent = 'Sorry, You Lost :( '
+      document.querySelector('#game-over-message').textContent = `Sorry, You Lost. The Phrase: ${this.activePhrase.phrase}`
       document.querySelector('#overlay').className = 'lose'
     }
   }

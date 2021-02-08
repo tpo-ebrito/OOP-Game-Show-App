@@ -56,4 +56,14 @@ document.querySelector('#btn__reset').addEventListener('click', (e) => {
 buttons.forEach(button => button.addEventListener('click', (e) => {
   game.handleInteraction(e.target)
   // console.log(button.textContent)
+  // console.log(e.target)
 }))
+
+document.addEventListener('keyup', (e) => {
+  buttons.forEach(button => {
+    if (button.textContent === e.key) {
+      game.handleInteraction(button)
+    }
+  })
+//   console.log(`key = ${e.key}, code = ${e.code}`)
+})
